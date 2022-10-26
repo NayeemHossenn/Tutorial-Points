@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -14,7 +15,9 @@ const Header = () => {
       className="mb-5"
     >
       <Container>
-        <Navbar.Brand href="#home">Tutorial Points</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/">Tutorial Points</Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
