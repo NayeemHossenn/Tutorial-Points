@@ -6,7 +6,11 @@ import { Link } from "react-router-dom";
 const CourseSummaryCard = ({ courses }) => {
   return (
     <Card>
-      <Card.Img variant="top" src={courses.image_url} />
+      <Card.Img
+        variant="top"
+        style={{ height: "500px", width: "100%" }}
+        src={courses.image_url}
+      />
       <Card.Body>
         <Card.Title>{courses.title}</Card.Title>
         <Card.Text>

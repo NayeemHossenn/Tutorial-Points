@@ -16,12 +16,19 @@ const Header = () => {
     >
       <Container>
         <Navbar.Brand>
-          <Link to="/">Tutorial Points</Link>
+          <Link to="/" className="text-decoration-none">
+            Tutorial Points
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Courses</Nav.Link>
+            <Nav.Link>
+              {" "}
+              <Link to="/courses" className="text-decoration-none">
+                Courses
+              </Link>
+            </Nav.Link>
             <Nav.Link href="#pricing">FAQ</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
