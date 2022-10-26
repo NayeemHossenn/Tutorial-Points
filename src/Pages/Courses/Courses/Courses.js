@@ -13,11 +13,11 @@ const Courses = () => {
         src={courses.image_url}
       />
       <Card.Body>
-        <Card.Title>{courses.title}</Card.Title>
+        <Card.Title>{courses?.title}</Card.Title>
 
         <p>
           {" "}
-          <small>Badge: {courses.rating.badge}</small>
+          <small>Badge: {courses?.rating?.badge}</small>
         </p>
 
         <Card.Text>{courses.details}</Card.Text>
@@ -30,7 +30,7 @@ const Courses = () => {
         </Link>
         <p>
           {" "}
-          <small>Ratings: {courses.rating.number}/5</small>
+          <small>Ratings: {courses?.rating?.number}/5</small>
         </p>
       </div>
     </Card>
