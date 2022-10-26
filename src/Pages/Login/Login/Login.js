@@ -7,13 +7,16 @@ import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Form from "react-bootstrap/Form";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState("");
   const { SignIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const { providerLogin } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
@@ -38,7 +41,7 @@ const Login = () => {
         console.log(user);
         form.reset();
         setError("");
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => setError(error.message));
   };
