@@ -1,5 +1,6 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
 
 import Button from "react-bootstrap/Button";
@@ -10,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
+  const [error, setError] = useState("");
   const { SignIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -35,9 +37,10 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        setError("");
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
   };
 
   return (
@@ -66,9 +69,7 @@ const Login = () => {
         <Button variant="primary" type="submit">
           Login
         </Button>
-        <Form.Text className="text-danger">
-          We'll never share your email with anyone else.
-        </Form.Text>
+        <Form.Text className="text-danger">{error}</Form.Text>
       </Form>
 
       <ButtonGroup vertical className="mt-3">
