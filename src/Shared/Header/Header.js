@@ -1,15 +1,24 @@
 import React from "react";
 import { useContext } from "react";
+import { Image } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <Navbar
       collapseOnSelect
@@ -51,8 +60,41 @@ const Header = () => {
             <Nav.Link eventKey={2} href="#memes">
               Toggle Theme
             </Nav.Link>
-            <Nav.Link>{user?.displayName}</Nav.Link>
           </Nav>
+          <Nav.Link className="text-white">
+            {user?.uid ? (
+              <>
+                <span>{user?.displayName}</span>
+                <Button
+                  onClick={handleLogOut}
+                  variant="secondary"
+                  className="m-2"
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="me-2">
+                  Login
+                </Link>
+                <Link to="/register" className="me-2">
+                  Register
+                </Link>
+              </>
+            )}
+          </Nav.Link>
+          <Nav.Link>
+            {user?.photoURL ? (
+              <Image
+                style={{ height: "30px" }}
+                roundedCircle
+                src={user?.photoURL}
+              ></Image>
+            ) : (
+              <FaUser className="text-white"></FaUser>
+            )}
+          </Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
