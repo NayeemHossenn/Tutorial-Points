@@ -85,7 +85,9 @@ const Login = () => {
         <p>
           <small>
             {" "}
-            <Link to="/register">Create New Account</Link>
+            <Link to="/register" className="text-dark">
+              Create New Account
+            </Link>
           </small>
         </p>
         <Form.Text className="text-danger">{error}</Form.Text>
@@ -95,12 +97,16 @@ const Login = () => {
         <Button
           onClick={handleGoogleSignIn}
           variant="outline-primary"
-          className="mb-2"
+          className="mb-2 text-black"
         >
           {" "}
           <FaGoogle></FaGoogle> Login with Google
         </Button>
-        <Button onClick={handleGithubLogin} variant="outline-info">
+        <Button
+          onClick={handleGithubLogin}
+          variant="outline-primary"
+          className="text-black"
+        >
           <FaGithub></FaGithub> Login with Github
         </Button>
       </ButtonGroup>

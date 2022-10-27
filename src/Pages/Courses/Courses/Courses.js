@@ -6,10 +6,10 @@ import Card from "react-bootstrap/Card";
 const Courses = () => {
   const courses = useLoaderData();
   return (
-    <Card>
+    <Card className="p-3">
       <Card.Img
         variant="top"
-        style={{ height: "500px", width: "100%" }}
+        style={{ height: "400px", width: "" }}
         src={courses.image_url}
       />
       <Card.Body>

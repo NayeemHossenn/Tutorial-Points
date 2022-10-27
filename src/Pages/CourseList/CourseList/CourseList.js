@@ -6,13 +6,15 @@ const CourseList = () => {
   const allcourses = useLoaderData();
   return (
     <div>
-      <h2>This is Home total :{allcourses.length}</h2>
-      {allcourses.map((courses) => (
-        <CourseSummaryCard
-          key={courses._id}
-          courses={courses}
-        ></CourseSummaryCard>
-      ))}
+      <h2 className="text-center mb-3">This is the course section</h2>
+      <div>
+        {allcourses.map((courses) => (
+          <CourseSummaryCard
+            key={courses._id}
+            courses={courses}
+          ></CourseSummaryCard>
+        ))}
+      </div>
     </div>
   );
 };

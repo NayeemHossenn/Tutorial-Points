@@ -2,11 +2,12 @@ import React from "react";
 import { useContext } from "react";
 import { Image } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import logo from "../../assets/favicon.ico";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
@@ -34,6 +35,9 @@ const Header = () => {
     >
       <Container>
         <Navbar.Brand>
+          <Image src={logo}></Image>
+        </Navbar.Brand>
+        <Navbar.Brand>
           <Link to="/" className="text-decoration-none">
             Tutorial Points
           </Link>
@@ -53,17 +57,6 @@ const Header = () => {
                 FAQ
               </Link>
             </Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
           </Nav>
           <Nav>
             <Nav.Link>

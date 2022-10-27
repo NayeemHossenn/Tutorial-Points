@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const LeftSideNav = () => {
@@ -12,11 +13,19 @@ const LeftSideNav = () => {
   }, []);
   return (
     <div>
-      <h2>All Courses :{courses.length}</h2>
-      <div>
+      <h2>All Courses </h2>
+      <div className="border border-secondary rounded p-3">
         {courses.map((course) => (
           <p key={course._id}>
-            <Link to={`/courses/${course._id}`}>{course.title}</Link>
+            <Button variant="outline-danger">
+              {" "}
+              <Link
+                to={`/courses/${course._id}`}
+                className="text-decoration-none text-dark fw-bold"
+              >
+                {course.title}
+              </Link>
+            </Button>{" "}
           </p>
         ))}
       </div>
