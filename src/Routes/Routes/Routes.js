@@ -59,6 +59,17 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      // {
+      //   path: "/courses/:id",
+      //   element: (
+      //     <PrivateRoute>
+      //       {" "}
+      //       <PremiumCourses></PremiumCourses>
+      //     </PrivateRoute>
+      //   ),
+      //   loader: ({ params }) =>
+      //     fetch(`http://localhost:5000/courses/${params.id}`),
+      // },
     ],
   },
 ]);
