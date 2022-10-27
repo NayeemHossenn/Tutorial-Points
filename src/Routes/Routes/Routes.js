@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
+import Blog from "../../Pages/Blog/Blog";
 import Category from "../../Pages/Category/Category/Category";
 import CourseList from "../../Pages/CourseList/CourseList/CourseList";
 import Courses from "../../Pages/Courses/Courses/Courses";
+import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
@@ -58,6 +60,14 @@ export const routes = createBrowserRouter([
             <PremiumCourses></PremiumCourses>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/faq",
+        element: <Faq></Faq>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       // {
       //   path: "/courses/:id",

@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Form from "react-bootstrap/Form";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
@@ -82,6 +82,12 @@ const Login = () => {
         <Button variant="primary" type="submit">
           Login
         </Button>
+        <p>
+          <small>
+            {" "}
+            <Link to="/register">Create New Account</Link>
+          </small>
+        </p>
         <Form.Text className="text-danger">{error}</Form.Text>
       </Form>
 

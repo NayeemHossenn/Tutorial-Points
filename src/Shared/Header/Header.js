@@ -19,6 +19,11 @@ const Header = () => {
       .then(() => {})
       .catch((error) => console.log(error));
   };
+
+  const toggleTheme = () => {
+    alert("toggle theme");
+  };
+
   return (
     <Navbar
       collapseOnSelect
@@ -42,7 +47,12 @@ const Header = () => {
                 Courses
               </Link>
             </Nav.Link>
-            <Nav.Link href="#pricing">FAQ</Nav.Link>
+            <Nav.Link>
+              {" "}
+              <Link to="/faq" className="text-decoration-none">
+                FAQ
+              </Link>
+            </Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -56,8 +66,13 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Blog</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link>
+              {" "}
+              <Link to="/blog" className="text-decoration-none">
+                Blogs
+              </Link>
+            </Nav.Link>
+            <Nav.Link onClick={() => toggleTheme()} href="#">
               Toggle Theme
             </Nav.Link>
           </Nav>

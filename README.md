@@ -1,15 +1,21 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tutorial Points
 
-## Available Scripts
+### Live Website Link Given Below
 
-In the project directory, you can run:
+### ` features and functionality`
 
-### `npm start`
+It's a Tutorial Website.Here people can get different kinds of courses.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- In the home page people can see our courses list in the side navbar.If He?She clicked one of the courses he/she will see the details
+- In the course section people can see course list.And there is a button on the course card to see the details about the course
+- It has signIn option.If someone wants to buy premium courses He needs to login first.
+- It has frequently asked questions and blogs.People can read those things freely.
+- This website has responsive behavior for smaller devices.
+
+  Runs the app in the development mode.\
+  Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
